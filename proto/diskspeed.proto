@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package diskspeed;
+
+service DiskSpeedService {
+  rpc MeasureSpeed (SpeedRequest) returns (SpeedResponse) {}
+}
+
+message SpeedRequest {
+  string file_name = 1;
+  int32 file_size = 2;
+}
+
+message SpeedResponse {
+  double read_speed = 1;
+  double write_speed = 2;
+}
